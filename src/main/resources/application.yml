@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url : jdbc:oracle:thin:@192.168.10.20:1522:pdb_demo
+    username : ftv_training
+    password : ftv_training
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+
+server:
+  port: 8080
