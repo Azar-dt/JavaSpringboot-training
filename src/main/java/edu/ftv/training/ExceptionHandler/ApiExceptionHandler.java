@@ -1,6 +1,6 @@
 package edu.ftv.training.ExceptionHandler;
 
-import edu.ftv.training.Model.ResponseMessage;
+import edu.ftv.training.payload.ResponseMessage;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;

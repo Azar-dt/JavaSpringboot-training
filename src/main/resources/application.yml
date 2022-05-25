@@ -8,6 +8,9 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: none
+  h2:
+      console:
+        enabled: true
 
 server:
   port: 8080

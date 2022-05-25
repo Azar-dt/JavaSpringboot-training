@@ -1,4 +1,4 @@
-package edu.ftv.training.Model;
+package edu.ftv.training.payload;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

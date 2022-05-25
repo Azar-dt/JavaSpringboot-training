@@ -1,10 +1,10 @@
 package edu.ftv.training.Service;
 
-import edu.ftv.training.Model.PagingRequest;
-import edu.ftv.training.Model.PagingResponse;
 import edu.ftv.training.Model.SuDung;
 import edu.ftv.training.Model.SuDung_;
 import edu.ftv.training.Repository.SuDungRepository;
+import edu.ftv.training.payload.PagingRequest;
+import edu.ftv.training.payload.PagingResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

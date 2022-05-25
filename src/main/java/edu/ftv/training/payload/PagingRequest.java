@@ -1,4 +1,6 @@
-package edu.ftv.training.Model;
+package edu.ftv.training.payload;
+
+import edu.ftv.training.Model.SuDung;
 
 public class PagingRequest {
     private SuDung suDung;
