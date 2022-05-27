@@ -50,7 +50,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         CustomAuthenticationFilter customAuthenticationFilter = new CustomAuthenticationFilter(authenticationManagerBean());
-        customAuthenticationFilter.setFilterProcessesUrl("/api/login");
+        customAuthenticationFilter.setFilterProcessesUrl("/api/login"); // khi request di vao url nay thi phai di qua filter customAuth
         http
                 .cors().configurationSource(request -> {
                     var cors = new CorsConfiguration();
@@ -61,14 +61,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 }).and()
                 .csrf()
                 .disable();
-        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS); // set ve stateless de kiem soat request qua jwt
         http
                 .addFilter(customAuthenticationFilter);
         http
                 .authorizeRequests()
-                .antMatchers("/login","/api/token/refresh").permitAll()
-                .anyRequest().authenticated();
+                .antMatchers("/login","/api/token/refresh").permitAll() // cho phep tat ca truy cap vao 2 url nay
+                .anyRequest().authenticated(); // con lai thi phai di qua filter
         http
-                .addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class); // filter kiem soat jwt
     }
 }

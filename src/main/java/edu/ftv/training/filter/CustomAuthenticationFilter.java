@@ -54,12 +54,12 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
         Algorithm algorithm = Algorithm.HMAC256("baka".getBytes());
         String accessToken = JWT.create()
                 .withSubject(user.getUsername())
-                .withExpiresAt(new Date(System.currentTimeMillis() +  60 * 1000)) // 1min
+                .withExpiresAt(new Date(System.currentTimeMillis() +  10 * 60 * 1000)) // 10min
                 .withIssuer(request.getRequestURL().toString())
                 .sign(algorithm);
         String refreshToken = JWT.create()
                 .withSubject(user.getUsername())
-                .withExpiresAt(new Date(System.currentTimeMillis() + 30 * 60 * 1000)) // 30min
+                .withExpiresAt(new Date(System.currentTimeMillis() + 60 * 60 * 1000)) // 60min
                 .withIssuer(request.getRequestURL().toString())
                 .sign(algorithm);
 

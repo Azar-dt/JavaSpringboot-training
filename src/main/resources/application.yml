@@ -3,6 +3,9 @@ spring:
     url : jdbc:oracle:thin:@192.168.10.20:1522:pdb_demo
     username : ftv_training
     password : ftv_training
+#    url: jdbc:postgresql://localhost:5432/FTV_TRAINING
+#    username: postgres
+#    password: ducthang
   jpa:
     generate-ddl: true
     show-sql: true
